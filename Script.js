@@ -1,21 +1,17 @@
-// Smooth scrolling for navigation menu
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('nav ul li a');
-    
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
+const contactForm = document.querySelector('.contact-form');
 
-            const targetId = this.getAttribute('href').substring(1); // Get the target section's ID
-            const targetSection = document.getElementById(targetId);
+contactForm.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-            if (targetSection) {
-                const targetOffset = targetSection.getBoundingClientRect().top + window.scrollY;
-                window.scrollTo({
-                    top: targetOffset,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+  const name = document.querySelector('#name').value;
+  const email = document.querySelector('#email').value;
+  const message = document.querySelector('#message').value;
+
+  // Send the contact form data to your server
+
+  // Clear the contact form fields
+
+  document.querySelector('#name').value = '';
+  document.querySelector('#email').value = '';
+  document.querySelector('#message').value = '';
 });
