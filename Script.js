@@ -1,17 +1,15 @@
-const contactForm = document.querySelector('.contact-form');
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle the "Contact Me" button click
+    function contactMe() {
+        alert("You have initiated contact. Feel free to send a message via Discord!");
+        // You can replace the alert with actual contact functionality, like opening a messaging app.
+    }
 
-contactForm.addEventListener('submit', function(event) {
-  event.preventDefault();
+    // Get the "Contact Me" button by its ID
+    const contactButton = document.getElementById('contactButton');
 
-  const name = document.querySelector('#name').value;
-  const email = document.querySelector('#email').value;
-  const message = document.querySelector('#message').value;
-
-  // Send the contact form data to your server
-
-  // Clear the contact form fields
-
-  document.querySelector('#name').value = '';
-  document.querySelector('#email').value = '';
-  document.querySelector('#message').value = '';
+    // Add a click event listener to the button
+    if (contactButton) {
+        contactButton.addEventListener('click', contactMe);
+    }
 });
